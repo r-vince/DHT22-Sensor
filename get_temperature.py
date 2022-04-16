@@ -7,10 +7,14 @@ def GetSpeedofSound(Temp):
     #print(str(SoS))
     return SoS
 
-
-
 def GetTemp():
     th = DTH(Pin('P3', mode=Pin.OPEN_DRAIN),1)
-    time.sleep(2)
+    time.sleep(.5)
     result = th.read()
     return result.temperature
+
+def GetHumidity():
+    th = DTH(Pin('P3', mode=Pin.OPEN_DRAIN),1)
+    time.sleep(.5)
+    result = th.read()
+    return result.humidity
